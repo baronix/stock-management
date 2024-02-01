@@ -13,12 +13,18 @@ import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, Pagi
 import { products } from "./data/products"
 import Spinner from "./components/Spinner"
 import AnimatedPage from "./components/AnimatedPage"
+import Login from "./components/Login"
+import NavBar from "./components/NavBar"
 
 
 function App() {
 
   //redux declares
   const dispatch = useDispatch();
+
+  const { isLoggedIn } = useSelector((state) => state.products) 
+
+  console.log(isLoggedIn)
 
   //useEffect for first render fetch
     useEffect(()=>{
@@ -115,7 +121,13 @@ const handleDelete = (_id) => {
 
   return (
     <>
-      { 
+      <NavBar/>
+      {
+      !isLoggedIn 
+      ?
+      <Login/>
+      :
+      (<div>{ 
       !filteredProducts 
       ? 
       <Spinner/> 
@@ -263,7 +275,7 @@ const handleDelete = (_id) => {
             </PaginationItem>
           </PaginationContent>
         </Pagination> */}
-      </div></AnimatedPage>)}
+      </div></AnimatedPage>)}</div>)}
     </>
   )
 }

@@ -52,11 +52,15 @@ const productSlice = createSlice({
         isLoading: false,
         data: null,
         isError: false,
-        searchTerm: ""
+        searchTerm: "",
+        isLoggedIn: false
     },
     reducers: {
       setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
+    },
+    setLoggedIn: (state, action) => {
+      state.isLoggedIn = action.payload;
     },
     },
     extraReducers: (builder) => {
@@ -74,5 +78,5 @@ const productSlice = createSlice({
     },
 });
 
-export const { setSearchTerm } = productSlice.actions;
+export const { setSearchTerm, setLoggedIn } = productSlice.actions;
 export default productSlice.reducer;
