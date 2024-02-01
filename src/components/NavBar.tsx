@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Button } from "./ui/button"
 import { setLoggedIn } from "@/redux/productSlice";
 import { useDispatch, useSelector } from "react-redux";

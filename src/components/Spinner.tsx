@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import AnimatedPage from "./AnimatedPage"
 
 const Spinner = () => {

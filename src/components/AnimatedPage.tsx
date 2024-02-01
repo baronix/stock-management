@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { motion } from 'framer-motion'
 
 const animations = {

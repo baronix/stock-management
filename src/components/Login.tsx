@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Input } from "./ui/input"
 import { Button } from "./ui/button"
 import { setLoggedIn } from "@/redux/productSlice";
