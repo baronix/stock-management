@@ -45,6 +45,7 @@ const Login = () => {
                 <TabsTrigger value="Registar">Registar</TabsTrigger>
             </TabsList>
             <TabsContent value="Login" >
+                    <AnimatedPage>
                     <Card>
                     <CardHeader className="text-center">
                         <CardTitle>Entrar</CardTitle>
@@ -88,8 +89,10 @@ const Login = () => {
                         </div>
                     </CardFooter>
                 </Card>
+                </AnimatedPage>
             </TabsContent>
             <TabsContent value="Registar">
+                <AnimatedPage>
                 <Card>
                     <CardHeader className="text-center">
                         <CardTitle>Registar</CardTitle>
@@ -111,6 +114,7 @@ const Login = () => {
                         <Button onClick={handleClick}>Registar <UserRoundCheck className="h-4 w-4 ml-1"/></Button>
                     </CardFooter>
                 </Card>
+                </AnimatedPage>
             </TabsContent>
             </Tabs>
             <p className="text-sm fixed bottom-10"><span className="font-bold">PS:</span> Esta ainda é uma página demonstrativa, não precisa colocar credenciais nenhumas basta clicar em "Entrar"</p>
