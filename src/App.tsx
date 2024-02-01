@@ -64,13 +64,15 @@ const handleDelete = (_id) => {
     newProductData.append('price', newProduct.price);
     newProductData.append('quantity', newProduct.quantity);
 
-    dispatch(addProduct({ name: newProduct.name, price: newProduct.price, quantity: newProduct.quantity}))
+    const validatedPrice = newProduct.price.replace(/,/g, ".");
+
+    dispatch(addProduct({ name: newProduct.name, price: validatedPrice, quantity: newProduct.quantity}))
     .then(result => dispatch(fetchProducts()))
     setNewProduct({
       name: '',
       price: '',
       quantity: '',
-    })
+    }) 
   };
 
   const handleEdit = ( e: React.FormEvent,  _id ) => {
@@ -190,7 +192,7 @@ const handleDelete = (_id) => {
                             </div>
                             <div className="grid grid-cols-4 items-center">
                               <Label htmlFor="quantidd">Quantidade</Label>
-                              <Input className="col-span-3" required id="quantidd" value={editedProduct.quantity} onChange={handleEditInputChange} type="number" name="quantity" placeholder={product.quantity}/>
+                              <Input className="col-span-3" min="1" required id="quantidd" value={editedProduct.quantity} onChange={handleEditInputChange} type="number" name="quantity" placeholder={product.quantity}/>
                             </div>
                             <DialogFooter>
                               <DialogClose asChild>
