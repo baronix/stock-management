@@ -11,4 +11,4 @@
 
 # Live demo
 
-<a href="https://stock-management-rnfsbu1m5-baronwork-icloudcom.vercel.app/">Try it. </a>
+<a href="https://stock-management-one.vercel.app/">Try it. </a>
