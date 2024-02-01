@@ -132,8 +132,19 @@ const handleDelete = (_id) => {
     setCurrentPage(pageNumber);
   };
 
-  console.log(currentFilteredProducts);
+  //Matemática por trás
 
+  const sum = filteredProducts?.reduce((accumulator, object) => {
+  return accumulator + (object.price * object.quantity);
+}, 0);
+
+  const qttysum = filteredProducts?.reduce((accumulator, object) => {
+  return accumulator + object.quantity;
+}, 0);
+
+  const media = sum/qttysum
+
+console.log(qttysum)
 
   return (
     <>
@@ -150,7 +161,21 @@ const handleDelete = (_id) => {
       : 
       (<AnimatedPage>
       <div className="p-6 max-w-4xl mx-auto space-y-4">
-        <h1 className="text-3xl font-bold">Produtos</h1>
+        <div className="flex justify-between space-x-3">
+          <div className="border rounded-lg flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 lg:w-[33%] w-[50%]">
+            <h1 className="font-bold text-3xl lg:text-4xl">{sum.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</h1>
+            <p className="pt-4 italic">Valor total em produtos</p>
+          </div>
+          <div className="border rounded-lg flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 lg:w-[33%] w-[50%]">
+            <h1 className="font-bold text-3xl lg:text-4xl">{qttysum}</h1>
+            <p className="pt-4 italic">Produtos introduzidos</p>
+          </div>
+          <div className="border rounded-lg lg:flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 md:w-[33%] hidden">
+            <h1 className="font-bold text-3xl lg:text-4xl">{media.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</h1>
+            <p className="pt-4 italic">Média de preço por produto</p>
+          </div>
+        </div>
+        <h1 className="text-3xl font-bold pt-4">Produtos</h1>
           <div className="flex items-center justify-between">
             <form className="flex items-center gap-2">
               <Input name="nome" id="nome" value={searchTerm} onChange={(e) => handleSearchChange(e.target.value)} placeholder={`Pesquisar`} />
