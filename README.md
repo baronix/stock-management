@@ -5,6 +5,7 @@
 - Redux (Thunk)
 - Tailwind CSS
 - Express.js
+- Axios
 - MongoDB
 - Node.js
 
