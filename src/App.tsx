@@ -228,7 +228,7 @@ const handleDelete = (_id) => {
             </TableBody> 
           </Table>
         </div>
-        <Pagination>
+        {/*still need to work on this <Pagination>
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious href="#" />
@@ -251,7 +251,7 @@ const handleDelete = (_id) => {
               <PaginationNext href="#" />
             </PaginationItem>
           </PaginationContent>
-        </Pagination>
+        </Pagination> */}
       </div>
     </>
   )
