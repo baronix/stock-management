@@ -208,7 +208,7 @@ const handleDelete = (_id) => {
                     <TableCell className="">{product.name}</TableCell>
                     <TableCell className="">{product.price.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</TableCell>
                     <TableCell className="">{product.quantity}</TableCell>
-                    <div className="flex space-x-2 pl-4">
+                    <div className="flex space-x-2 mt-1">
                       <Dialog>
                         <DialogTrigger asChild>
                           <button><PencilIcon /></button>
