@@ -29,6 +29,7 @@ const Login = () => {
                 <p className="text-sm">Não tem uma conta?</p>
                 <p className="text-sm">Esqueceu a password?</p>
             </div>
+            <p className="text-sm">Esta é uma página demonstrativa, não precisa colocar credenciais nenhumas basta clicar em "Entrar"</p>
         </div>   
     </div>
   )
