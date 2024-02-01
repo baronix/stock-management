@@ -24,8 +24,6 @@ function App() {
 
   const { isLoggedIn } = useSelector((state) => state.products) 
 
-  console.log(isLoggedIn)
-
   //useEffect for first render fetch
     useEffect(()=>{
       dispatch(fetchProducts());
@@ -144,7 +142,6 @@ const handleDelete = (_id) => {
 
   const media = sum/qttysum
 
-console.log(qttysum)
 
   return (
     <>
