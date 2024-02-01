@@ -157,15 +157,15 @@ const handleDelete = (_id) => {
       <Spinner/> 
       : 
       (<AnimatedPage>
-      <div className="p-6 max-w-4xl mx-auto space-y-4">
+      <div className="p-6 max-w-[90%] lg:max-w-4xl mx-auto space-y-4">
         <div className="flex justify-between space-x-3">
           <div className="border rounded-lg flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 lg:w-[33%] w-[50%]">
-            <h1 className="font-bold text-3xl lg:text-4xl">{sum.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</h1>
-            <p className="pt-4 italic">Valor total em produtos</p>
+            <h1 className="font-bold text-xl lg:text-4xl">{sum.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</h1>
+            <p className="pt-4 text-center italic text-sm">Valor total em produtos</p>
           </div>
           <div className="border rounded-lg flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 lg:w-[33%] w-[50%]">
-            <h1 className="font-bold text-3xl lg:text-4xl">{qttysum}</h1>
-            <p className="pt-4 italic">Produtos introduzidos</p>
+            <h1 className="font-bold text-xl lg:text-4xl">{qttysum}</h1>
+            <p className="pt-4 text-center italic text-sm">Produtos introduzidos</p>
           </div>
           <div className="border rounded-lg lg:flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 md:w-[33%] hidden">
             <h1 className="font-bold text-3xl lg:text-4xl">{media.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</h1>
@@ -176,7 +176,7 @@ const handleDelete = (_id) => {
           <div className="flex items-center justify-between">
             <form className="flex items-center gap-2">
               <Input name="nome" id="nome" value={searchTerm} onChange={(e) => handleSearchChange(e.target.value)} placeholder={`Pesquisar`} />
-              <Label htmlFor="nome"><Search className="w-4 h-4"/></Label>
+              <Label htmlFor="nome" className="hidden md:block"><Search className="w-4 h-4"/></Label>
             </form>
             <Dialog>
               <DialogTrigger asChild>

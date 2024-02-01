@@ -38,8 +38,8 @@ const Login = () => {
 
   return (
     <AnimatedPage>
-        <div className="h-[50vh] flex flex-col items-center justify-center">
-            <Tabs defaultValue="Login" className="w-[400px]">
+        <div className="h-[50vh] md: flex flex-col items-center justify-center">
+            <Tabs defaultValue="Login" className="w-[400px] max-w-[90%] md:max-w-[100%]">
             <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="Login">Entrar</TabsTrigger>
                 <TabsTrigger value="Registar">Registar</TabsTrigger>
@@ -117,7 +117,7 @@ const Login = () => {
                 </AnimatedPage>
             </TabsContent>
             </Tabs>
-            <p className="text-sm fixed bottom-10"><span className="font-bold">PS:</span> Esta ainda é uma página demonstrativa, não precisa colocar credenciais nenhumas basta clicar em "Entrar"</p>
+            <p className="text-sm fixed bottom-10 max-w-[80%]"><span className="font-bold">PS:</span> Esta ainda é uma página demonstrativa, não precisa colocar credenciais nenhumas basta clicar em "Entrar"</p>
         </div>
     </AnimatedPage>
   )
