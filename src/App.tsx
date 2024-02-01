@@ -161,15 +161,15 @@ const handleDelete = (_id) => {
         <div className="flex justify-between space-x-3">
           <div className="border rounded-lg flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 lg:w-[33%] w-[50%]">
             <h1 className="font-bold text-xl lg:text-4xl">{sum.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</h1>
-            <p className="pt-4 text-center italic text-sm">Valor total em produtos</p>
+            <p className="pt-4 text-center italic text-sm">Valor total</p>
           </div>
           <div className="border rounded-lg flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 lg:w-[33%] w-[50%]">
             <h1 className="font-bold text-xl lg:text-4xl">{qttysum}</h1>
-            <p className="pt-4 text-center italic text-sm">Produtos introduzidos</p>
+            <p className="pt-4 text-center italic text-sm">Produtos</p>
           </div>
           <div className="border rounded-lg lg:flex flex-col items-center justify-center py-5 lg:py-0 lg:h-40 md:w-[33%] hidden">
             <h1 className="font-bold text-3xl lg:text-4xl">{media.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</h1>
-            <p className="pt-4 italic">Média de preço por produto</p>
+            <p className="pt-4 text-center italic text-sm">Média de preço por produto</p>
           </div>
         </div>
         <h1 className="text-3xl font-bold pt-4">Produtos</h1>
