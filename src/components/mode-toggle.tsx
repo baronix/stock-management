@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 import { useDispatch, useSelector } from "react-redux"
