@@ -3,7 +3,7 @@
 import { Button } from "./components/ui/button"
 import { Input } from "./components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./components/ui/table"
-import { Search, PlusCircle, XCircle, PencilIcon } from "lucide-react"
+import { Search, PlusCircle, XCircle, PencilIcon, Ghost } from "lucide-react"
 import { DialogContent, Dialog, DialogTrigger, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "./components/ui/dialog"
 import { Label } from "./components/ui/label"
 import { useEffect, useState } from "react"
@@ -118,6 +118,22 @@ const handleDelete = (_id) => {
         dispatch(setSearchTerm(value))
     }
 
+  //Pagination
+
+  const [pagesPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const indexOfLastPost = currentPage * pagesPerPage;
+  const indexOfFirstPost = indexOfLastPost - pagesPerPage;
+
+  const currentFilteredProducts = filteredProducts?.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  console.log(currentFilteredProducts);
+
 
   return (
     <>
@@ -186,7 +202,7 @@ const handleDelete = (_id) => {
               <TableHead className="w-[10%]">Qtd</TableHead>
             </TableHeader>
             <TableBody>
-              {filteredProducts?.map((product: any) => {
+              {currentFilteredProducts?.map((product: any) => {
                 return (
                   <TableRow key={product._id}>
                     <TableCell className="">{product.name}</TableCell>
@@ -251,30 +267,27 @@ const handleDelete = (_id) => {
             </TableBody> 
           </Table>
         </div>
-        {/*still need to work on this <Pagination>
+        <Pagination>
           <PaginationContent>
+            {currentPage > 1 ? (<PaginationItem>
+              <Button variant={Ghost}><PaginationPrevious onClick={() => paginate(currentPage-1)} /></Button>
+            </PaginationItem>) : <div></div>}
+            {currentPage-1 === 0 ? <div></div> : (<PaginationItem>
+              <PaginationLink onClick={() => paginate(currentPage-1)}><Button variant={Ghost}>{currentPage-1}</Button></PaginationLink>
+            </PaginationItem>)}
             <PaginationItem>
-              <PaginationPrevious href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
+              <PaginationLink isActive>
+                {currentPage}
               </PaginationLink>
             </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
-            </PaginationItem>
+            {currentFilteredProducts.length === 10 ? (<PaginationItem>
+              <PaginationLink onClick={() => paginate(currentPage+1)}><Button variant={Ghost}>{currentPage+1}</Button></PaginationLink>
+            </PaginationItem>) : <div></div>}
+            {currentFilteredProducts.length === 10  ? (<PaginationItem>
+              <Button variant={Ghost}><PaginationNext onClick={() => paginate(currentPage+1)} /></Button>
+            </PaginationItem>): <div></div>}
           </PaginationContent>
-        </Pagination> */}
+        </Pagination>
       </div></AnimatedPage>)}</div>)}
     </>
   )
