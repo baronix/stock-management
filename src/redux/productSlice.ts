@@ -53,7 +53,8 @@ const productSlice = createSlice({
         data: null,
         isError: false,
         searchTerm: "",
-        isLoggedIn: false
+        isLoggedIn: false,
+        isDark: "light"
     },
     reducers: {
       setSearchTerm: (state, action) => {
@@ -61,6 +62,9 @@ const productSlice = createSlice({
     },
     setLoggedIn: (state, action) => {
       state.isLoggedIn = action.payload;
+    },
+    setDark: (state, action) => {
+      state.isDark = action.payload;
     },
     },
     extraReducers: (builder) => {
@@ -78,5 +82,5 @@ const productSlice = createSlice({
     },
 });
 
-export const { setSearchTerm, setLoggedIn } = productSlice.actions;
+export const { setSearchTerm, setLoggedIn, setDark } = productSlice.actions;
 export default productSlice.reducer;

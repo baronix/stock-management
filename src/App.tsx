@@ -230,10 +230,10 @@ const handleDelete = (_id) => {
                     <TableCell className="">{product.name}</TableCell>
                     <TableCell className="">{product.price.toLocaleString('pt-PT', {style: 'currency', currency: 'eur'})}</TableCell>
                     <TableCell className="">{product.quantity}</TableCell>
-                    <div className="flex space-x-2 mt-1">
+                    <div className="flex space-x-2 mt-3 lg:mt-1">
                       <Dialog>
                         <DialogTrigger asChild>
-                          <button><PencilIcon /></button>
+                          <button><PencilIcon className="h-4 lg:h-6" /></button>
                         </DialogTrigger>
                         <DialogContent>
                           <DialogHeader>
@@ -266,7 +266,7 @@ const handleDelete = (_id) => {
                       </Dialog>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <button><XCircle /></button>
+                          <button><XCircle className="h-4 lg:h-6"/></button>
                         </DialogTrigger>
                         <DialogContent>
                           <DialogHeader>
