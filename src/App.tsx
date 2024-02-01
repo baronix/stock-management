@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "./components/ui/pagination"
 import { products } from "./data/products"
 import Spinner from "./components/Spinner"
+import AnimatedPage from "./components/AnimatedPage"
 
 
 function App() {
@@ -119,7 +120,8 @@ const handleDelete = (_id) => {
       ? 
       <Spinner/> 
       : 
-      (<div className="p-6 max-w-4xl mx-auto space-y-4">
+      (<AnimatedPage>
+      <div className="p-6 max-w-4xl mx-auto space-y-4">
         <h1 className="text-3xl font-bold">Produtos</h1>
           <div className="flex items-center justify-between">
             <form className="flex items-center gap-2">
@@ -261,7 +263,7 @@ const handleDelete = (_id) => {
             </PaginationItem>
           </PaginationContent>
         </Pagination> */}
-      </div>)}
+      </div></AnimatedPage>)}
     </>
   )
 }
