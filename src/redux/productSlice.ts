@@ -34,7 +34,7 @@ export const editProduct = createAsyncThunk(
   "editProduct",
   async (data) => {
     const response = await axios.put(
-      `https://stock-management-server-ten.vercel.app/${data.id}`,
+      `https://stock-management-server-ten.vercel.app/update/${data.id}`,
       {
         name: data.name,
         price: data.price,
