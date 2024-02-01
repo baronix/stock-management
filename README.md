@@ -9,6 +9,7 @@
 - MongoDB
 - Node.js
 - Lucide
+- Framer motion
 
 # Live demo
 
