@@ -8,7 +8,7 @@
 - Axios
 - MongoDB
 - Node.js
-
+- Lucide
 
 # Live demo
 
