@@ -28,7 +28,7 @@ const NavBar = () => {
     const isDark = useSelector((state) => state.products.isDark)
 
     useEffect(() => {
-        dispatch(setDark(localStorage.getItem('vite-ui-theme')))
+        dispatch(setDark(localStorage.getItem('vite-ui-theme') || "light"))
     }, [])
 
     const dispatch = useDispatch()
